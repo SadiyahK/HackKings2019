@@ -1,7 +1,5 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link, StaticQuery, graphql } from "gatsby";
-import Layout from "./layout";
-import SEO from "./seo";
 
 export const Label = ({ title, path }) => (
   <Link to={path} className="link margin-15-b" id="path">
