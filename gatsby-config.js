@@ -14,25 +14,6 @@ module.exports = {
       options: {
         icon: `src/images/mango.png`
       }
-    },
-    {
-      resolve: `gatsby-transformer-remark`,
-      options: {
-        plugins: [
-          {
-            resolve: `gatsby-remark-images`
-          },
-          `gatsby-remark-copy-images`,
-          `gatsby-remark-copy-linked-files`
-        ]
-      }
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `markdown-pages`,
-        path: `${__dirname}/markdown`
-      }
     }
   ]
 };
