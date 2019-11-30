@@ -16,8 +16,9 @@ export default () => {
                             <div className = "col-xs-3 col-md-3 col-lg-3">
                                  <img src={require('../images/${item.image}')} alt="Logo"/>;
                             </div>
-                                <div class="vl"></div>
-                                 <div className = "col-xs-8 col-md-8 col-lg-8">
+                                
+                            <div class="vl"></div>
+                                <div className = "col-xs-8 col-md-8 col-lg-8">
 
                                  <div className = "">
                                         <h5>Animal: {item.animal}</h5>  
@@ -40,7 +41,7 @@ export default () => {
                                 </div>
                             
                             </div>
-                            
+
                             <div>
                            
                             <h3>{item.neutered}</h3>
@@ -50,6 +51,7 @@ export default () => {
 
 
                         </div>
+                    </div>
                     )
                 })
             }
