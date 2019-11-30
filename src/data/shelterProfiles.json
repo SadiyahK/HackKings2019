@@ -1,0 +1,33 @@
+[
+    {
+        "image":"logo.png",
+        "name":"Greek Animal Welfare Fund",
+        "address":"51 Borough High St, London SE1 1NB",
+        "shelterId":"S123456",
+        "times":"9:00-17:00",
+        "days":"Mondays, Tuesday, Wednesday, Thursdays, Fridays, Saturdays, Sundays",
+        "description":"here is a description of shelter"
+       
+    },
+    {
+        "image":"logo.png",
+        "name":"RMC Animal Search & Rescue Ltd",
+        "address":"152-160 City Rd, London EC1V 2NX",
+        "shelterId":"S112233",
+        "times":"10:00-18:00",
+        "days":"Mondays, Tuesday, Wednesday, Thursdays, Fridays, Saturdays, Sundays",
+        "description":"here is a description of shelter"
+       
+    },
+    {
+        "image":"logo.png",
+        "name":"Lady Dinah's Cat Emporium",
+        "address":"152-154, Bethnal Green Rd, London E2 6DG",
+        "shelterId":"S111111",
+        "times":"10:00-18:00",
+        "days":"Mondays, Tuesday, Thursdays, Fridays, Saturdays, Sundays",
+        "description":"here is a description of shelter"
+       
+    }
+    
+]
