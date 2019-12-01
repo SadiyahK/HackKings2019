@@ -1,7 +1,7 @@
 import React from 'react';
+import Header from '../components/Header';
 import ShelterView from "../components/shelterView";
 import animalList from "../data/animalProfiles";
-import shelterList from "../data/shelterProfiles";
 
 export default class searchPage extends React.Component {
     constructor(props) {
@@ -28,7 +28,7 @@ export default class searchPage extends React.Component {
 
     handleAnimalChange(event) {
         event.preventDefault();
-        if(event.target.value !== "Any"){
+        if(event.target.value === "Cat" || event.target.value === "Dog" ){
             this.setState({animal: event.target.value});
         }
         else{
@@ -73,19 +73,19 @@ export default class searchPage extends React.Component {
             else {
                 groupedShelterResults[filteredAnimal.shelterId] = [filteredAnimal.animalId];
             }
-        }
-        //console.log(groupedShelterResults);  
+        }  
         this.setState({groupedShelterResults})
     }
   
     render() {
       return (
-        <div className="margin-10 pad-10"> 
-            <h1>Search Page</h1>
-            <form onSubmit={this.handleSubmit}>
-                <label for="animal" className="margin-5">Animal:</label>
+        <div><Header className="header"/>
+        <div className="margin-10 pad-5"> 
+            <h1 className="label">Search</h1>
+            <form onSubmit={this.handleSubmit} className="form-inline">
+                <label for="animal" className="margin-5 label">Animal:</label>
                 <select name="Animals" onChange={this.handleAnimalChange}>
-                    <option value="any">Any</option>
+                    <option value="Any">Any</option>
                     <option value="Dog">Dog</option>
                     <option value="Cat">Cat</option>
                     <option value="Other">Other</option>
@@ -94,10 +94,10 @@ export default class searchPage extends React.Component {
                 <label for="age" className="margin-5">Age:</label>
                 <input type="text" name="age" onChange={this.handleAgeChange}/>
                 <br/><br/>
-                <label for="male" className="margin-5">Male</label>
-                <input type="radio" name="gender" id="male" value="Male" onChange={this.handleGenderChange}/>
-                <label for="female" className="margin-5">Female</label>
-                <input type="radio" name="gender" id="female" value="Female" onChange={this.handleGenderChange}/>
+                <label for="Male" className="margin-5">Male</label>
+                <input type="radio" name="gender" id="Male" value="Male" onChange={this.handleGenderChange}/>
+                <label for="Female" className="margin-5">Female</label>
+                <input type="radio" name="gender" id="Female" value="Female" onChange={this.handleGenderChange}/>
                 <label for="any" className="margin-5">Any</label>
                 <input type="radio" name="gender" id="any" value="Any" onChange={this.handleGenderChange}/>
                 <br/><br/>
@@ -112,6 +112,7 @@ export default class searchPage extends React.Component {
                     return <ShelterView key= {key} shelterId= {key} animals={this.state.groupedShelterResults[key]}/>
                 })
             }
+        </div>
         </div>
       );
     }

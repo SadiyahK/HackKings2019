@@ -1,0 +1,24 @@
+label{
+    font-family: Lato;
+}
+input{
+    font-family: Lato;
+}
+option{
+    font-family: Lato;
+}
+.form-inline {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    margin : 0 auto;
+}
+.div-inline{
+    display: inline-block;  
+}
+.inline-child{
+    display: inline-block;
+    vertical-align: top;
+    margin: 0px 16px;
+    padding: 8px;
+}

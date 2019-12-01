@@ -118,9 +118,9 @@ export default class MatchMe extends React.Component {
               <input type="submit" value="Search"/>
           </form>
           {
-              Object.keys(this.state.matchingAnimals).map((key) => {
-                 return <AnimalSearch key= {key} animalID= {key}/>
-              })
+              //Object.keys(this.state.matchingAnimals).map((key) => {
+                // return <AnimalSearch key= {key} animalID= {key}/>
+              //})
           }
       </div>
     );
