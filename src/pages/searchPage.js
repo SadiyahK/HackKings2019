@@ -91,20 +91,20 @@ export default class searchPage extends React.Component {
                     <option value="Other">Other</option>
                 </select>
                 <br/><br/>
-                <label for="age" className="margin-5">Age:</label>
+                <label for="age" className="margin-3">Age:</label>
                 <input type="text" name="age" onChange={this.handleAgeChange}/>
                 <br/><br/>
-                <label for="Male" className="margin-5">Male</label>
+                <label for="Male" className="margin-3">Male</label>
                 <input type="radio" name="gender" id="Male" value="Male" onChange={this.handleGenderChange}/>
-                <label for="Female" className="margin-5">Female</label>
+                <label for="Female" className="margin-3">Female</label>
                 <input type="radio" name="gender" id="Female" value="Female" onChange={this.handleGenderChange}/>
-                <label for="any" className="margin-5">Any</label>
+                <label for="any" className="margin-3">Any</label>
                 <input type="radio" name="gender" id="any" value="Any" onChange={this.handleGenderChange}/>
                 <br/><br/>
-                <label for="postcode" className="margin-5">Postcode:</label>
+                <label for="postcode" className="margin-3">Postcode:</label>
                 <input type="text" name="postcode" onChange={this.handlePostcodeChange}/>
                 <br/><br/>
-                <input type="submit" value="Search"/>
+                <input type="submit" value="Search" className="btn margin-3"/>
             </form>
             {
                 Object.keys(this.state.groupedShelterResults).map((key) => {
