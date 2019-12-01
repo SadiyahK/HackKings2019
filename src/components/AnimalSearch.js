@@ -25,7 +25,7 @@ export default ({animalID}) => {
                             <div className = "pad-30-t pad-10-l col-xs-2 col-md-2 col-lg-2"> 
                                 <div className = "row"> 
                                 <Link to={"animalProfile?id="+item.animalId}>
-                                    Learn More 
+                                    <button className="btn">Learn More</button> 
                                 </Link>
                                 </div>
                             </div>
