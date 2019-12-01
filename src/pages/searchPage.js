@@ -1,4 +1,5 @@
 import React from 'react';
+import Header from '../components/Header';
 import ShelterView from "../components/shelterView";
 import animalList from "../data/animalProfiles";
 import shelterList from "../data/shelterProfiles";
@@ -80,6 +81,7 @@ export default class searchPage extends React.Component {
   
     render() {
       return (
+        <div><Header className="header"/>
         <div className="margin-10 pad-10"> 
             <h1>Search Page</h1>
             <form onSubmit={this.handleSubmit}>
@@ -111,6 +113,7 @@ export default class searchPage extends React.Component {
                     return <ShelterView key= {key} shelterId= {key} animals={this.state.groupedShelterResults[key]}/>
                 })
             }
+        </div>
         </div>
       );
     }
