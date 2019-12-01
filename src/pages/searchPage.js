@@ -28,7 +28,7 @@ export default class searchPage extends React.Component {
 
     handleAnimalChange(event) {
         event.preventDefault();
-        if(event.target.value !== "Any"){
+        if(event.target.value === "Cat" || event.target.value === "Dog" ){
             this.setState({animal: event.target.value});
         }
         else{
@@ -57,7 +57,7 @@ export default class searchPage extends React.Component {
     }
 
     filterAnimalSearch() {
-        const filteredAnimals = animalList.filter(item => (!this.state.gender || item.gender === this.state.gender) && (this.state.animal || item.animal === this.state.animal) && (!this.state.age || item.age === this.state.age))
+        const filteredAnimals = animalList.filter(item => (!this.state.gender || item.gender === this.state.gender) && (!this.state.animal || item.animal === this.state.animal) && (!this.state.age || item.age === this.state.age))
         return filteredAnimals.map(item => ({animalId: item.animalId, shelterId: item.shelterId}));
     }
 
@@ -86,8 +86,8 @@ export default class searchPage extends React.Component {
                 <label for="animal" className="margin-5">Animal:</label>
                 <select name="Animals" onChange={this.handleAnimalChange}>
                     <option value="any">Any</option>
-                    <option value="dog">Dog</option>
-                    <option value="cat">Cat</option>
+                    <option value="Dog">Dog</option>
+                    <option value="Cat">Cat</option>
                     <option value="other">Other</option>
                 </select>
                 <br/><br/>
