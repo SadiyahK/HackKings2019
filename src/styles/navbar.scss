@@ -1,13 +1,12 @@
 /* Add a black background color to the top navigation */
 .navbar {
     overflow: hidden;
-    margin: 0 auto;
     width : 100%;
-    //display: inline-block;
+    background-color: black;
   }
   .divFill{
-    overflow: hidden;
     margin: 0 auto;
+    background-color: black;
   }
   /* Style the links inside the navigation bar */
   .navbar a {
@@ -37,5 +36,6 @@
   .icon{
     width : 30px;
     height: 30px;
-    display: inline;
+    margin: 0px 8px;
+    display: inline-block;
   }

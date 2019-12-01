@@ -80,15 +80,15 @@ export default class searchPage extends React.Component {
     render() {
       return (
         <div><Header className="header"/>
-        <div className="margin-10 pad-10"> 
-            <h1>Search Page</h1>
-            <form onSubmit={this.handleSubmit}>
-                <label for="animal" className="margin-5">Animal:</label>
+        <div className="margin-10 pad-5"> 
+            <h1 className="label">Search</h1>
+            <form onSubmit={this.handleSubmit} className="form-inline">
+                <label for="animal" className="margin-5 label">Animal:</label>
                 <select name="Animals" onChange={this.handleAnimalChange}>
-                    <option value="any">Any</option>
+                    <option value="Any">Any</option>
                     <option value="Dog">Dog</option>
                     <option value="Cat">Cat</option>
-                    <option value="other">Other</option>
+                    <option value="Other">Other</option>
                 </select>
                 <br/><br/>
                 <label for="age" className="margin-5">Age:</label>
@@ -108,6 +108,8 @@ export default class searchPage extends React.Component {
             </form>
             {
                 Object.keys(this.state.groupedShelterResults).map((key) => {
+
+                    console.log(this.state.groupedShelterResults[key])
                     return <ShelterView key= {key} shelterId= {key} animals={this.state.groupedShelterResults[key]}/>
                 })
             }

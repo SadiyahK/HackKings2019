@@ -1,7 +1,7 @@
 import React from "react";
 export default () => {
     return(
-        <div className = "navbar" >
+        <div className = "col-xs-12 col-md-12 col-lg-12 navbar" >
             <div className = "divFill">
                 <ul>
                     <li><a class="active" href="../homePage" className = "link">Home</a>
