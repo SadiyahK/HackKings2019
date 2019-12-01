@@ -1,6 +1,6 @@
 [
     {
-        "image":"logo.png",
+        "image":"1.png",
         "name":"Zeineb",
         "breed":"persian",
         "animal": "cat",
@@ -18,7 +18,7 @@
         "abandonIssue":true
     },
     {
-        "image":"logo.png",
+        "image":"1.png",
         "name":"Bob",
         "breed":"dalmation",
         "animal": "dog",
@@ -36,9 +36,9 @@
         "abandonIssue":false
     },
     {
-        "image":"logo.png",
+        "image":"1.png",
         "name":"Ari",
-        "breed":"pidgeon",
+        "breed":"pigeon",
         "animal": "bird",
         "gender":"male",
         "age": "45",
@@ -54,7 +54,7 @@
         "abandonIssue":true
     },
     {
-        "image":"logo.png",
+        "image":"1.png",
         "name":"Sam",
         "breed":"tarantula",
         "animal": "spider",
@@ -72,7 +72,7 @@
         "abandonIssue":false
     },
     {
-        "image":"logo.png",
+        "image":"1.png",
         "name":"Faith",
         "breed":"pomeranian",
         "animal": "dog",
@@ -90,7 +90,7 @@
         "abandonIssue":false
     },
     {
-        "image":"logo.png",
+        "image":"1.png",
         "name":"Carlota",
         "breed":"calico",
         "animal": "cat",
@@ -108,7 +108,7 @@
         "abandonIssue":false
     },
     {
-        "image":"logo.png",
+        "image":"1.png",
         "name":"William",
         "breed":"iguana",
         "animal": "lizard",
@@ -126,7 +126,7 @@
         "abandonIssue":true
     },
     {
-        "image":"logo.png",
+        "image":"1.png",
         "name":"Sadiyah",
         "breed":"dachshund",
         "animal": "dog",
@@ -144,7 +144,7 @@
         "abandonIssue":false
     },
     {
-        "image":"logo.png",
+        "image":"1.png",
         "name":"Cheddar",
         "breed":"corgi",
         "animal": "dog",
@@ -162,7 +162,7 @@
         "abandonIssue":false
     },    
     {
-        "image":"logo.png",
+        "image":"1.png",
          "name":"Milu",
         "breed":"Wire Fox Terrier",
         "animal": "dog",
@@ -180,7 +180,7 @@
         "abandonIssue":true
     },
     {
-        "image":"logo.png",
+        "image":"1.png",
         "name":"Yato",
         "breed":"munchkin",
         "animal": "cat",
@@ -198,7 +198,7 @@
         "abandonIssue":true
     },
     {
-        "image":"logo.png",
+        "image":"1.png",
         "name":"Dr.Whoo",
         "breed":"owl",
         "animal": "bird",
@@ -216,7 +216,7 @@
         "abandonIssue":false
     },
     {
-        "image":"logo.png",
+        "image":"1.png",
         "name":"Remmy",
         "breed":"dumbo",
         "animal": "rat",
@@ -234,7 +234,7 @@
         "abandonIssue":false
     },
     {
-        "image":"logo.png",
+        "image":"1.png",
         "name":"Darwin",
         "breed":"tree frog",
         "animal": "frog",
@@ -252,8 +252,7 @@
         "abandonIssue":false
     },
     {
-        "image":"logo.png",
-        "image":"logo.png",
+        "image":"1.png",
         "name":"Larry",
         "breed":"border collie",
         "animal": "dog",
