@@ -1,8 +1,8 @@
 import React from 'react';
 import animalList from "../data/animalProfiles";
-import ShelterView from "../components/shelterView";
 import _ from 'lodash';
 import AnimalSearch from "../components/AnimalSearch";
+import Header from '../components/Header';
 
 
 export default class MatchMe extends React.Component {
@@ -14,7 +14,7 @@ export default class MatchMe extends React.Component {
         outdoorsy: null,
         travel: null,
         allergies: {},
-        matchingAnimals: {}
+        matchingAnimals: []
   };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleSportChange = this.handleSportChange.bind(this);
@@ -29,7 +29,7 @@ export default class MatchMe extends React.Component {
     console.log(this.state.work);
     console.log(this.state.outdoorsy);
     console.log(this.state.travel);
-    console.log(this.filterAnimalSearch())
+    //console.log(this.filterAnimalSearch())
     this.setState({matchingAnimals: this.filterAnimalSearch()});
   }
 
@@ -80,48 +80,56 @@ export default class MatchMe extends React.Component {
   }
 
   render() {
+
+    console.log(this.state.matchingAnimals);
+
     return (
-      <div className="margin-10 pad-10"> 
-          <h1>Match Me</h1>
-          <form onSubmit={this.handleSubmit}>
-              <label for="Work" className="margin-5">Number of hours spent working per week:</label>
-                <select name="Work" onChange={this.handleWorkChange}>
-                    <option value="1">less than 10 hours</option>
-                    <option value="2">Between 11-20</option>
-                    <option value="3">Between 21-30</option>
-                    <option value="4">Between 31-40</option>
-                    <option value="5">Greater than 40</option>
+      <div className=""> 
+          <Header/>
+          <div className ="pad-10">
+            <h1>Match Me</h1>
+            <form onSubmit={this.handleSubmit}>
+                <label for="Work" className="margin-5">Number of hours spent working per week:</label>
+                  <select name="Work" onChange={this.handleWorkChange}>
+                      <option value="1">less than 10 hours</option>
+                      <option value="2">Between 11-20</option>
+                      <option value="3">Between 21-30</option>
+                      <option value="4">Between 31-40</option>
+                      <option value="5">Greater than 40</option>
+                  </select>
+                  <br/><br/>
+                <label for="Sport" className="margin-5">Number of hours spent working out per week:</label>
+                <select name="Sport" onChange={this.handleSportChange}>
+                      <option value="1">Less than 5 hours</option>
+                      <option value="2">Between 6-15 hours</option>
+                      <option value="3">Between 16-25 hours</option>
+                      <option value="4">Between 26-35 hours</option>
+                      <option value="5">Greater than 36 hours</option>
+                  </select>
+                <br/><br/>
+                <label for="Outdoors" className="margin-5">Outdoors</label>
+                <input type="radio" name="outdoorsy" id="Outdoors" value="Outdoors" onChange={this.handleOutdoorsChange}/>
+                <label for="Indoors" className="margin-5">Indoors</label>
+                <input type="radio" name="outdoorsy" id="Indoors" value="Indoors" onChange={this.handleOutdoorsChange}/>
+                <br/><br/>
+                <label for="travel" className="margin-5">Travel Frequency :</label>
+                <select name="TravelFrequency" onChange={this.handleTravelChange}>
+                    <option value="week"> Once a week</option>
+                    <option value="month"> Once a month</option>
+                    <option value="halfYear"> Once every 6 months</option>
+                    <option value="year"> Once a year</option>
                 </select>
                 <br/><br/>
-              <label for="Sport" className="margin-5">Number of hours spent working out per week:</label>
-              <select name="Sport" onChange={this.handleSportChange}>
-                    <option value="1">Less than 5 hours</option>
-                    <option value="2">Between 6-15 hours</option>
-                    <option value="3">Between 16-25 hours</option>
-                    <option value="4">Between 26-35 hours</option>
-                    <option value="5">Greater than 36 hours</option>
-                </select>
-              <br/><br/>
-              <label for="Outdoors" className="margin-5">Outdoors</label>
-              <input type="radio" name="outdoorsy" id="Outdoors" value="Outdoors" onChange={this.handleOutdoorsChange}/>
-              <label for="Indoors" className="margin-5">Indoors</label>
-              <input type="radio" name="outdoorsy" id="Indoors" value="Indoors" onChange={this.handleOutdoorsChange}/>
-              <br/><br/>
-              <label for="travel" className="margin-5">Travel Frequency :</label>
-              <select name="TravelFrequency" onChange={this.handleTravelChange}>
-                  <option value="week"> Once a week</option>
-                  <option value="month"> Once a month</option>
-                  <option value="halfYear"> Once every 6 months</option>
-                  <option value="year"> Once a year</option>
-              </select>
-              <br/><br/>
-              <input type="submit" value="Search"/>
-          </form>
-          {
-              //Object.keys(this.state.matchingAnimals).map((key) => {
-                // return <AnimalSearch key= {key} animalID= {key}/>
-              //})
-          }
+                <input type="submit" value="Search"/>
+            </form>
+            <div className="row">  
+                {this.state.matchingAnimals.map((value, index) => {
+                    return <div className="col-xs-5 col-md-5 col-lg-5 margin-5 pad-5 bord">
+                    <AnimalSearch animalID = {value.animalId}/>
+                </div> 
+                })}
+            </div>
+          </div>
       </div>
     );
   }
