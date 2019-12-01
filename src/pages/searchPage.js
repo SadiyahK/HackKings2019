@@ -94,7 +94,6 @@ export default class searchPage extends React.Component {
                 <label for="age" className="margin-5">Age:</label>
                 <input type="text" name="age" onChange={this.handleAgeChange}/>
                 <br/><br/>
-
                 <label for="Male" className="margin-5">Male</label>
                 <input type="radio" name="gender" id="Male" value="Male" onChange={this.handleGenderChange}/>
                 <label for="Female" className="margin-5">Female</label>
@@ -109,6 +108,7 @@ export default class searchPage extends React.Component {
             </form>
             {
                 Object.keys(this.state.groupedShelterResults).map((key) => {
+                    console.log(this.state.groupedShelterResults[key])
                     return <ShelterView key= {key} shelterId= {key} animals={this.state.groupedShelterResults[key]}/>
                 })
             }
