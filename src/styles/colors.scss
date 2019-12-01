@@ -5,7 +5,8 @@ $brand-colors:
 ("grey", #2E4052),
 ("light-grey", #F9F9F9),
 ("red", #ff0000),
-("green", #9BC995);
+("green", #9BC995),
+("cantaloupe",#F4AE72);
 
 @each $color in $brand-colors {
   .is-#{nth($color,1)}-bg{
