@@ -1,5 +1,5 @@
 import React from 'react';
-import 'react-dropdown/style.css';
+import Header from '../components/Header';
 import ShelterView from "../components/shelterView";
 
 export default class searchPage extends React.Component {
@@ -16,6 +16,7 @@ export default class searchPage extends React.Component {
   
     render() {
       return (
+        <div><Header className="header"/>
         <div className="margin-10 pad-10"> 
             <h1>Search Page</h1>
             <form onSubmit={this.handleSubmit}>
@@ -47,6 +48,7 @@ export default class searchPage extends React.Component {
                     <ShelterView shelterId="S112233" animals="A112233"/>
                 </React.Fragment>
             }
+        </div>
         </div>
       );
     }

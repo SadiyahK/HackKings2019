@@ -11,7 +11,7 @@ export default ({shelterId, animals}) => {
                         <div className="border-radius">
                             <h2 className="text">{item.name}</h2>
 						    <h4 className="text-sub">{item.address}</h4>
-                            <Link to="../pages/animalListView">
+                            <Link to="../pages/animalResults">
                                 <button type="button" className="btn">View Animals</button>
                             </Link>                        
                             </div>
