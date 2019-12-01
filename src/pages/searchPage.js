@@ -1,7 +1,6 @@
 import React from 'react';
 import ShelterView from "../components/shelterView";
 import animalList from "../data/animalProfiles";
-import shelterList from "../data/shelterProfiles";
 
 export default class searchPage extends React.Component {
     constructor(props) {
@@ -59,7 +58,6 @@ export default class searchPage extends React.Component {
 
     groupByShelters(){
         const filteredAnimals = this.filterAnimalSearch();
-        console.log(filteredAnimals);  
         
         let groupedShelterResults = {};
         for (const i in filteredAnimals) {
@@ -70,8 +68,7 @@ export default class searchPage extends React.Component {
             else {
                 groupedShelterResults[filteredAnimal.shelterId] = [filteredAnimal.animalId];
             }
-        }
-        console.log(groupedShelterResults);  
+        }  
         this.setState({groupedShelterResults})
     }
   
@@ -82,18 +79,18 @@ export default class searchPage extends React.Component {
             <form onSubmit={this.handleSubmit}>
                 <label for="animal" className="margin-5">Animal:</label>
                 <select name="Animals" onChange={this.handleAnimalChange}>
-                    <option value="dog">Dog</option>
-                    <option value="cat">Cat</option>
-                    <option value="other">Other</option>
+                    <option value="Dog">Dog</option>
+                    <option value="Cat">Cat</option>
+                    <option value="Other">Other</option>
                 </select>
                 <br/><br/>
                 <label for="age" className="margin-5">Age:</label>
                 <input type="text" name="age" onChange={this.handleAgeChange}/>
                 <br/><br/>
-                <label for="male" className="margin-5">Male</label>
-                <input type="radio" name="gender" id="male" value="male" onChange={this.handleGenderChange}/>
-                <label for="female" className="margin-5">Female</label>
-                <input type="radio" name="gender" id="female" value="female" onChange={this.handleGenderChange}/>
+                <label for="Male" className="margin-5">Male</label>
+                <input type="radio" name="gender" id="Male" value="Male" onChange={this.handleGenderChange}/>
+                <label for="Female" className="margin-5">Female</label>
+                <input type="radio" name="gender" id="Female" value="Female" onChange={this.handleGenderChange}/>
                 <label for="any" className="margin-5">Any</label>
                 <input type="radio" name="gender" id="any" value="Any" onChange={this.handleGenderChange}/>
                 <br/><br/>
