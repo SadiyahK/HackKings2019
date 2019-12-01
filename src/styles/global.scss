@@ -12,6 +12,9 @@
 @import "./border.scss";
 @import "./hero.scss";
 @import "./margin_padding.scss";
+@import "./header.scss";
+@import "./navbar.scss";
+@import "./ul.scss";
 
 @for $i from 1 through 6 {
     h#{7 - $i} {
