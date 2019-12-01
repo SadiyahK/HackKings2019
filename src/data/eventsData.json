@@ -1,6 +1,8 @@
 [
     {
-        "image":"",
+        "eventId": "321654",
+        "image":"catCafe.png",
+        "location":"LadyDinah.png",
         "name":"Cat Cafe Meet-Up",
         "date":"05/12/19",
         "startTime": "18:00",
@@ -10,17 +12,21 @@
         "url":"https://www.ladydinahs.com/"
     },
     {
-        "image":"",
+        "eventId": "321456",
+        "image":"doggy.png",
+        "location":"bushHouse.png",
         "name":"Doggy Stress Relieve",
         "date":"07/12/19",
         "startTime": "13:00",
         "endTime":"14:00",
-        "description": "Chill out and oet some dogs!",
+        "description": "Chill out and pet some dogs!",
         "address": "57 Aldwych, Holborn, London WC2B 4PA",
         "url":"https://www.kcl.ac.uk/business"
     },
     {
-        "image":"",
+        "eventId": "123456",
+        "image":"doggyPark.png",
+        "location":"LadyDinah.png",
         "name":"Doggy Park Day",
         "date":"13/12/19",
         "startTime": "13:00",
@@ -30,13 +36,15 @@
         "url":"https://themayhew.org/"
     },
     {
-        "image":"",
+        "eventId": "654321",
+        "image":"cat.png",
+        "location":"RegentsPark.png",
         "name":"Breeding Season Fundraiser",
         "date":"19/12/19",
         "startTime": "12:00",
         "endTime":"15:00",
         "description": "Join us at our local fundraiser where will be raising money for the coming cat breeding season.",
-        "address": "Reagent Park, London",
+        "address": "Regent's Park, London",
         "url":"5 Underwood St, Hoxton, London N1 7LY"
     }
 ]

@@ -1,13 +1,13 @@
 import React from 'react';
 
 import PetProfile from '../components/PetProfile';
-import NavBar from '../components/NavBar';
+import Header from '../components/Header';
 
 export default (props) => {
     const id = props.location.search.split("=")[1];
   return (
     <div className="">   
-    <NavBar/>
+    <Header/>
         <div className="">
             <PetProfile animalID = {id}/>
         </div>

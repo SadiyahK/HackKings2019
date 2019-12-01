@@ -24,9 +24,9 @@ export default class eventPage extends React.Component {
                                         <h4 className="text-sub">Start Time: {item.startTime}</h4>
                                         <h4 className="text-sub">Description: {item.description}</h4>
                                         <h4 className="text-sub">Address: {item.address}</h4>
-                                        <Link to="../pages/eventProfile.js">
+                                        <Link to={"eventProfile?id="+item.eventId}>
                                             <button type="button" className="btn">More Info</button>
-                                        </Link>                        
+                                        </Link>                  
                                         </div>
                                 )
                             })
