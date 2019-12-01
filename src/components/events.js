@@ -34,9 +34,9 @@ export default ({eventsID}) => {
                                         <h3>Description: {item.description}</h3> 
                                     </div>
 
-                                    <Link to= {item.url} >
+                                    <a href= {item.url} >
                                         <button type="button" className="btn">Find out more about us</button>
-                                    </Link> 
+                                    </a> 
                                 
                                 </div>
 
