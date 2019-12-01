@@ -3,7 +3,7 @@ import ShelterList from "../data/shelterProfiles.json"
 import {Link} from "gatsby" 
 export default ({shelterId, animals}) => {
     //const [name, setName] = useState("");
-    
+
     console.log(animals)
     return (
         <div>

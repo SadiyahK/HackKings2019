@@ -1,4 +1,5 @@
 import React from 'react';
+import Header from '../components/Header';
 import ShelterView from "../components/shelterView";
 import animalList from "../data/animalProfiles";
 
@@ -10,7 +11,6 @@ export default class searchPage extends React.Component {
           age: null,
           animal: null,
           location: null,
-          filteredAnimals: [],
           groupedShelterResults: {}
     };
       this.handleSubmit = this.handleSubmit.bind(this);
@@ -28,7 +28,12 @@ export default class searchPage extends React.Component {
 
     handleAnimalChange(event) {
         event.preventDefault();
-        this.setState({animal: event.target.value});
+        if(event.target.value !== "Any"){
+            this.setState({animal: event.target.value});
+        }
+        else{
+            this.setState({animal: null});
+        }
     }
 
     handleAgeChange(event) {
@@ -74,14 +79,16 @@ export default class searchPage extends React.Component {
   
     render() {
       return (
+        <div><Header className="header"/>
         <div className="margin-10 pad-10"> 
             <h1>Search Page</h1>
             <form onSubmit={this.handleSubmit}>
                 <label for="animal" className="margin-5">Animal:</label>
                 <select name="Animals" onChange={this.handleAnimalChange}>
-                    <option value="Dog">Dog</option>
-                    <option value="Cat">Cat</option>
-                    <option value="Other">Other</option>
+                    <option value="any">Any</option>
+                    <option value="dog">Dog</option>
+                    <option value="cat">Cat</option>
+                    <option value="other">Other</option>
                 </select>
                 <br/><br/>
                 <label for="age" className="margin-5">Age:</label>
@@ -104,6 +111,7 @@ export default class searchPage extends React.Component {
                     return <ShelterView key= {key} shelterId= {key} animals={this.state.groupedShelterResults[key]}/>
                 })
             }
+        </div>
         </div>
       );
     }
