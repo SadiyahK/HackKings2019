@@ -57,7 +57,7 @@ export default class searchPage extends React.Component {
     }
 
     filterAnimalSearch() {
-        const filteredAnimals = animalList.filter(item => (!this.state.gender || item.gender === this.state.gender) && (this.state.animal || item.animal === this.state.animal) && (!this.state.age || item.age === this.state.age))
+        const filteredAnimals = animalList.filter(item => (!this.state.gender || item.gender === this.state.gender) && (!this.state.animal || item.animal === this.state.animal) && (!this.state.age || item.age === this.state.age))
         return filteredAnimals.map(item => ({animalId: item.animalId, shelterId: item.shelterId}));
     }
 
@@ -74,7 +74,7 @@ export default class searchPage extends React.Component {
                 groupedShelterResults[filteredAnimal.shelterId] = [filteredAnimal.animalId];
             }
         }
-        console.log(groupedShelterResults);  
+        //console.log(groupedShelterResults);  
         this.setState({groupedShelterResults})
     }
   
@@ -86,18 +86,18 @@ export default class searchPage extends React.Component {
                 <label for="animal" className="margin-5">Animal:</label>
                 <select name="Animals" onChange={this.handleAnimalChange}>
                     <option value="any">Any</option>
-                    <option value="dog">Dog</option>
-                    <option value="cat">Cat</option>
-                    <option value="other">Other</option>
+                    <option value="Dog">Dog</option>
+                    <option value="Cat">Cat</option>
+                    <option value="Other">Other</option>
                 </select>
                 <br/><br/>
                 <label for="age" className="margin-5">Age:</label>
                 <input type="text" name="age" onChange={this.handleAgeChange}/>
                 <br/><br/>
                 <label for="male" className="margin-5">Male</label>
-                <input type="radio" name="gender" id="male" value="male" onChange={this.handleGenderChange}/>
+                <input type="radio" name="gender" id="male" value="Male" onChange={this.handleGenderChange}/>
                 <label for="female" className="margin-5">Female</label>
-                <input type="radio" name="gender" id="female" value="female" onChange={this.handleGenderChange}/>
+                <input type="radio" name="gender" id="female" value="Female" onChange={this.handleGenderChange}/>
                 <label for="any" className="margin-5">Any</label>
                 <input type="radio" name="gender" id="any" value="Any" onChange={this.handleGenderChange}/>
                 <br/><br/>
@@ -108,6 +108,7 @@ export default class searchPage extends React.Component {
             </form>
             {
                 Object.keys(this.state.groupedShelterResults).map((key) => {
+                    console.log(this.state.groupedShelterResults[key])
                     return <ShelterView key= {key} shelterId= {key} animals={this.state.groupedShelterResults[key]}/>
                 })
             }

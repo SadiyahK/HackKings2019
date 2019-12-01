@@ -2,6 +2,7 @@ import React from 'react';
 import animalList from "../data/animalProfiles";
 import ShelterView from "../components/shelterView";
 import _ from 'lodash';
+import AnimalSearch from "../components/AnimalSearch";
 
 
 export default class MatchMe extends React.Component {
@@ -12,7 +13,8 @@ export default class MatchMe extends React.Component {
         work: null,
         outdoorsy: null,
         travel: null,
-        allergies: {}
+        allergies: {},
+        matchingAnimals: {}
   };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleSportChange = this.handleSportChange.bind(this);
@@ -23,18 +25,34 @@ export default class MatchMe extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    this.groupByShelters();
-
+    console.log(this.state.sport);
+    console.log(this.state.work);
+    console.log(this.state.outdoorsy);
+    console.log(this.state.travel);
+    console.log(this.filterAnimalSearch())
+    this.setState({matchingAnimals: this.filterAnimalSearch()});
   }
 
   handleSportChange(event) {
     event.preventDefault();
-    this.setState({sport: event.target.value});
+    switch (event.target.value) {
+      case "1": this.setState({sport: "2"});
+      case "2": this.setState({sport: "4"});
+      case "3": this.setState({sport: "6"});
+      case "4": this.setState({sport: "8"});
+      case "5": this.setState({sport: "10"});
+      default: this.setState({sport: null});
+    }
   }
 
   handleWorkChange(event) {
     event.preventDefault();
-    this.setState({work: event.target.value});
+    if(event.target.value === "4" || event.target.value === "5"){
+      this.setState({work: false});
+    }
+    else{
+      this.setState({work: true});
+    }
   }
 
   handleOutdoorsChange(event) {
@@ -51,28 +69,14 @@ export default class MatchMe extends React.Component {
     if(event.target.value === "week" || event.target.value === "month" ){
       this.setState({travel: false});
     }
+    else{
+      this.setState({travel: true});
+    }
   }
 
   filterAnimalSearch() {
-      const filteredAnimals = animalList.filter(item => (!this.state.outdoorsy || item.outdoor === this.state.outdoorsy) && (this.state.work || item.attentionSeeking === this.state.work) && (!this.state.travel || item.abandonIssue === this.state.travel))
+      const filteredAnimals = animalList.filter(item => (!this.state.outdoorsy || item.outdoor === this.state.outdoorsy) && (!this.state.work || item.attentionSeeking === this.state.work) && (!this.state.travel || item.abandonIssue === this.state.travel) && (!this.state.sport || item.activeLevel === this.state.sport))
       return filteredAnimals.map(item => ({animalId: item.animalId, shelterId: item.shelterId}));
-  }
-
-  groupByShelters(){
-      const filteredAnimals = this.filterAnimalSearch();
-      console.log(filteredAnimals);  
-      
-      let groupedShelterResults = {};
-      for (const i in filteredAnimals) {
-          const filteredAnimal = filteredAnimals[i];
-          if(groupedShelterResults[filteredAnimal.shelterId]) {
-              groupedShelterResults[filteredAnimal.shelterId].push(filteredAnimal.animalId);
-          }
-          else {
-              groupedShelterResults[filteredAnimal.shelterId] = [filteredAnimal.animalId];
-          }
-      }
-      this.setState({groupedShelterResults})
   }
 
   render() {
@@ -82,13 +86,21 @@ export default class MatchMe extends React.Component {
           <form onSubmit={this.handleSubmit}>
               <label for="Work" className="margin-5">Number of hours spent working per week:</label>
                 <select name="Work" onChange={this.handleWorkChange}>
-                      { _.range(1, 50 + 1).map(value => <option key={value} value={value}>{value}</option>) }
+                    <option value="1">less than 10 hours</option>
+                    <option value="2">Between 11-20</option>
+                    <option value="3">Between 21-30</option>
+                    <option value="4">Between 31-40</option>
+                    <option value="5">Greater than 40</option>
                 </select>
                 <br/><br/>
               <label for="Sport" className="margin-5">Number of hours spent working out per week:</label>
               <select name="Sport" onChange={this.handleSportChange}>
-                    { _.range(1, 50 + 1).map(value => <option key={value} value={value}>{value}</option>) }
-              </select>
+                    <option value="1">Less than 5 hours</option>
+                    <option value="2">Between 6-15 hours</option>
+                    <option value="3">Between 16-25 hours</option>
+                    <option value="4">Between 26-35 hours</option>
+                    <option value="5">Greater than 36 hours</option>
+                </select>
               <br/><br/>
               <label for="Outdoors" className="margin-5">Outdoors</label>
               <input type="radio" name="outdoorsy" id="Outdoors" value="Outdoors" onChange={this.handleOutdoorsChange}/>
@@ -106,8 +118,8 @@ export default class MatchMe extends React.Component {
               <input type="submit" value="Search"/>
           </form>
           {
-              Object.keys(this.state.groupedShelterResults).map((key) => {
-                  return <ShelterView key= {key} shelterId= {key} animals={this.state.groupedShelterResults[key]}/>
+              Object.keys(this.state.matchingAnimals).map((key) => {
+                 return <AnimalSearch key= {key} animalID= {key}/>
               })
           }
       </div>
