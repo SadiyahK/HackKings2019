@@ -11,7 +11,6 @@ export default class searchPage extends React.Component {
           age: null,
           animal: null,
           location: null,
-          filteredAnimals: [],
           groupedShelterResults: {}
     };
       this.handleSubmit = this.handleSubmit.bind(this);
@@ -64,7 +63,6 @@ export default class searchPage extends React.Component {
 
     groupByShelters(){
         const filteredAnimals = this.filterAnimalSearch();
-        console.log(filteredAnimals);  
         
         let groupedShelterResults = {};
         for (const i in filteredAnimals) {
