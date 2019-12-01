@@ -1,7 +1,7 @@
 import React from 'react';
 import eventsList from "../data/eventsData";
 import {Link} from "gatsby";
-import NavBar from "../components/NavBar";
+import Header from "../components/Header";
 
 export default class eventPage extends React.Component {
     constructor(props) {
@@ -13,7 +13,7 @@ export default class eventPage extends React.Component {
     render() {
             return (
                     <div>
-                        <NavBar/>
+                        <Header/>
                         {
                             eventsList.map(item => {
                                 return (
