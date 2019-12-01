@@ -15,6 +15,7 @@
 @import "./header.scss";
 @import "./navbar.scss";
 @import "./ul.scss";
+@import "./label.scss";
 
 @for $i from 1 through 6 {
     h#{7 - $i} {
