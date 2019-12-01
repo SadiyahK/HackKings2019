@@ -109,7 +109,9 @@ export default class searchPage extends React.Component {
             </form>
             {
                 Object.keys(this.state.groupedShelterResults).map((key) => {
-                    return <ShelterView key= {key} shelterId= {key} animals={this.state.groupedShelterResults[key]}/>
+                    return (<ShelterView key= {key} shelterId= {key} animals={this.state.groupedShelterResults[key]}/>
+                    
+                    )
                 })
             }
         </div>

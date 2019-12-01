@@ -12,7 +12,7 @@ export default ({shelterId, animals}) => {
                     return (
                         <div className="border-radius">
                             <div className="inline-child" >
-                            <img src={require(`../images/animal-shelter1.jpg`)} alt="Logo" className = "shelter-pic" />
+                            <img src={require(`../images/${item.image}`)} alt="Logo" className = "shelter-pic" />
                             </div>
                             <div className="inline-child">
                             <h2 className="text">{item.name}</h2>
