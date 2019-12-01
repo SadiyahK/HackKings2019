@@ -3,6 +3,8 @@ import ShelterList from "../data/shelterProfiles.json"
 import {Link} from "gatsby" 
 export default ({shelterId, animals}) => {
     //const [name, setName] = useState("");
+
+    console.log(animals)
     return (
         <div>
             {
@@ -15,7 +17,7 @@ export default ({shelterId, animals}) => {
                             <div className="inline-child">
                             <h2 className="text">{item.name}</h2>
 						    <h4 className="text-sub">{item.address}</h4>
-                            <Link to="../pages/animalResults">
+                            <Link to= {"animalResults?id="+animals} >
                                 <button type="button" className="btn">View Animals</button>
                             </Link>      
                             </div>                  
