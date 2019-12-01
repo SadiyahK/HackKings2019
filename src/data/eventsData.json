@@ -1,0 +1,42 @@
+[
+    {
+        "image":"",
+        "name":"Cat Cafe Meet-Up",
+        "date":"05/12/19",
+        "startTime": "18:00",
+        "endTime":"20:00",
+        "description": "Come along and join us for a fun evening!",
+        "address": "152-154, Bethnal Green Rd, London E2 6DG",
+        "url":"https://www.ladydinahs.com/"
+    },
+    {
+        "image":"",
+        "name":"Doggy Stress Relieve",
+        "date":"07/12/19",
+        "startTime": "13:00",
+        "endTime":"14:00",
+        "description": "Chill out and oet some dogs!",
+        "address": "57 Aldwych, Holborn, London WC2B 4PA",
+        "url":"https://www.kcl.ac.uk/business"
+    },
+    {
+        "image":"",
+        "name":"Doggy Park Day",
+        "date":"13/12/19",
+        "startTime": "13:00",
+        "endTime":"14:00",
+        "description": "A meet up for you to come and play some dogs waiting to be adopted at our local shelter!",
+        "address": "Hyde Park, London",
+        "url":"https://themayhew.org/"
+    },
+    {
+        "image":"",
+        "name":"Breeding Season Fundraiser",
+        "date":"19/12/19",
+        "startTime": "12:00",
+        "endTime":"15:00",
+        "description": "Join us at our local fundraiser where will be raising money for the coming cat breeding season.",
+        "address": "Reagent Park, London",
+        "url":"5 Underwood St, Hoxton, London N1 7LY"
+    }
+]

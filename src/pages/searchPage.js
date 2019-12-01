@@ -29,7 +29,12 @@ export default class searchPage extends React.Component {
 
     handleAnimalChange(event) {
         event.preventDefault();
-        this.setState({animal: event.target.value});
+        if(event.target.value !== "Any"){
+            this.setState({animal: event.target.value});
+        }
+        else{
+            this.setState({animal: null});
+        }
     }
 
     handleAgeChange(event) {
@@ -82,6 +87,7 @@ export default class searchPage extends React.Component {
             <form onSubmit={this.handleSubmit}>
                 <label for="animal" className="margin-5">Animal:</label>
                 <select name="Animals" onChange={this.handleAnimalChange}>
+                    <option value="any">Any</option>
                     <option value="dog">Dog</option>
                     <option value="cat">Cat</option>
                     <option value="other">Other</option>
