@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React from "react";
 import ShelterList from "../data/shelterProfiles.json"
 import {Link} from "gatsby" 
 export default ({shelterId, animals}) => {
